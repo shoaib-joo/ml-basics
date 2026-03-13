@@ -1,13 +1,14 @@
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
+import os
 
 learning_rate = 0.0001
 
 # Load data
-data = pd.read_csv(r"D:\Digital Engineering\Machine Learning\Algorithms\Datasets\swedish_insurance.csv")
-print(data.head())
 
+base_dir = os.path.dirname(os.path.abspath(__file__))
+data = pd.read_csv(os.path.join(base_dir, "Datasets", "swedish_insurance.csv"))
 # Extract X and Y
 x = data["X"].to_numpy()
 y = data["Y"].to_numpy()
